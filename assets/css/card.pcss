@@ -1,0 +1,98 @@
+@import 'mixins.pcss';
+
+.card {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.card-header {
+  line-height: 1.2em;
+  margin-bottom: 15px;
+
+  @mixin clearfix;
+}
+
+.card-updated {
+  color: $color-gray;
+  float: left;
+}
+
+.card-body {
+  margin-bottom: 13px;
+
+  @mixin clearfix;
+}
+
+.card-content {
+  float: left;
+  margin-top: 1px;
+  width: 514px;
+}
+
+.card-name {
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  line-height: 1.112em;
+  margin-bottom: 5px;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-exp {
+  margin-bottom: 3px;
+}
+
+.card-contacts {
+  font-size: 1.4rem;
+  margin-top: 12px;
+}
+
+.card-contacts-avail {
+  margin-left: 20px;
+}
+
+.card-img {
+  float: right;
+  margin-top: 1px;
+}
+
+.card-button {
+  background: none;
+  border-radius: 4px;
+  border: 1px solid $color-link;
+  color: $color-link;
+  cursor: pointer;
+  line-height: 2.067em;
+  margin-right: 6px;
+  padding: 0 11px;
+}
+
+/* unrchased state */
+.card-inbox,
+.card-name,
+.card-contacts,
+.card-actions {
+  display: none;
+}
+
+/* purchased state */
+.card-purchased {
+  .card-inbox {
+    display: inline-block;
+  }
+
+  .card-button-buy {
+    display: none;
+  }
+
+  .card-name,
+  .card-contacts,
+  .card-actions, {
+    display: block;
+  }
+}

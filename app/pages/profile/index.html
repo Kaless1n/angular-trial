@@ -1,0 +1,85 @@
+<div class="profile" ng-class="{'profile-purchased': profile.data.isPurchased}">
+  <div class="page-box">
+    <button class="card-button card-button-buy" ng-click="profile.purchase()">
+      Приобрести контакты
+    </button>
+
+    <card-actions class="card-actions" card-id="profile.data.id"></card-actions>
+  </div>
+
+  <div class="profile-summary page-box">
+    <div class="profile-summary-header">
+      <span class="profile-summary-id">№ {{profile.data.id}}</span>
+
+      <span class="profile-summary-inbox">во «Входящих»</span>
+
+      <favorite card-id="profile.data.id"></favorite>
+    </div>
+
+    <div class="profile-summary-content">
+      <h2 class="profile-name">{{profile.data.name.first}} {{profile.data.name.last}}</h2>
+      <h1 class="profile-title">{{profile.data.position.wanted}}</h1>
+
+      <p class="profile-terms">
+        {{profile.data.salary}} ₽,
+        {{profile.data.terms.fulltime ? 'полный рабочий день' : 'частичная занятость'}},
+        {{profile.data.terms.office ? 'на территории работодателя' : 'удаленно'}}
+      </p>
+
+      <ul class="profile-contacts">
+        <li class="profile-contacts-item" ng-repeat="phone in profile.data.phones">
+          <span class="profile-contacts-number">{{phone.number}}</span>
+          <span class="profile-contacts-avail">{{phone.availability}}</span>
+        </li>
+
+        <li class="profile-contacts-item">
+          <a class="profile-contacts-email" href="mailto:{{profile.data.email}} ">{{profile.data.email}} </a>
+        </li>
+      </ul>
+    </div>
+
+    <img class="profile-img" src="./assets/img/tmp/user-img-med.jpg"></img>
+  </div>
+
+  <div class="profile-exp-container page-box">
+    <h3 class="profile-exp-header">Опыт работы {{profile.data.exp.total.years}} лет {{profile.data.exp.total.months}} месяцев</h3>
+
+    <div class="profile-exp" ng-repeat="exp in profile.data.exp.full">
+      <div class="prpfile-exp-position">
+        <h4 class="profile-exp-position-title">{{exp.position}}</h4>
+        <p class="profile-exp-position-date">{{(exp.date.quit - exp.date.entered) / 1000 / 60 / 60 / 24 / 30 | number: 0}} месяцев</p>
+        <p class="profile-exp-position-date">{{exp.date.entered | date: 'MMMM&nbsp;yyyy'}} — {{exp.date.quit | date: 'MMMM&nbsp;yyyy'}}</p>
+      </div>
+
+      <div class="profile-exp-details">
+        <p class="profile-exp-details-title">
+          <span class="profile-exp-details-company">{{exp.company}}</span>, {{exp.city}}, {{exp.fulltime ? 'полная занятость' : 'частичная занятость'}}
+        </p>
+
+        <ul class="profile-exp-details-lislt">
+          <li class="profile-exp-details-item" ng-repeat="duty in exp.duties">
+            {{duty}}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="profile-exp-header">Высшее образование</h3>
+
+    <div class="profile-exp" ng-repeat="exp in profile.data.exp.education">
+      <div class="prpfile-exp-position">
+        <p>{{exp.graduated | date: 'yyyy'}}</p>
+      </div>
+
+      <div class="profile-exp-details">
+        <p class="profile-exp-details-title">
+          <span class="profile-exp-details-company">{{exp.institution}}</span>
+        </p>
+
+        <p>{{exp.faculty}}</p>
+        <p>{{exp.evening}}</p>
+        <p>{{exp.specialty}}</p>
+      </div>
+    </div>
+  </div>
+</div>

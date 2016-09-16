@@ -1,0 +1,16 @@
+<button class="favorite" ng-class="{'favorite-active': $ctrl.isFavorite}" ng-click="$ctrl.toggle()">
+  <span class="favorite-status favorite-status-no">
+    <svg class="favorite-icon svg-icon svg-star-empty">
+      <use xlink:href="#star-empty"></use>
+    </svg>
+
+    В избранные
+  </span>
+  <span class="favorite-status favorite-status-yes">
+    <svg class="favorite-icon svg-icon svg-star-full">
+      <use xlink:href="#star-full"></use>
+    </svg>
+
+    В избранном
+  </span>
+</button>

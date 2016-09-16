@@ -1,0 +1,40 @@
+@import 'mixins.pcss';
+
+.svg-sprite {
+  display: none;
+}
+
+html {
+  font: 10px/1.4 Roboto, Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #f0f1f2;
+}
+
+.page-wrapper {
+  margin: 0 auto;
+  padding-top: 20px;
+  width: 960px;
+
+  @mixin clearfix;
+}
+
+.page-content {
+  float: left;
+  width: 640px;
+}
+
+.page-sidebar {
+  float: right;
+  width: 314px;
+}
+
+.page-box {
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  padding: 18px;
+}

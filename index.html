@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <base href="/">
+
+    <title>Angular 1.5 trial</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" href="./min/css/normalize.css">
+    <link rel="stylesheet" href="./min/css/reset.css">
+    <link rel="stylesheet" href="./min/css/general.css">
+    <link rel="stylesheet" href="./min/css/sprite.css">
+    <link rel="stylesheet" href="./min/css/card.css">
+    <link rel="stylesheet" href="./min/css/profile.css">
+    <link rel="stylesheet" href="./min/css/favorite.css">
+    <link rel="stylesheet" href="./min/css/card-actions.css">
+    <link rel="stylesheet" href="./min/css/banner.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=cyrillic" rel="stylesheet">
+
+    <script type="text/javascript" src="./assets/lib/angular.min.js" defer="defer"></script>
+    <script type="text/javascript" src="./assets/lib/angular-route.min.js" defer="defer"></script>
+    <script type="text/javascript" src="./assets/lib/svgBaseFix.js" defer="defer"></script>
+
+    <script type="text/javascript" src="./app/app.module.js" defer="defer"></script>
+    <script type="text/javascript" src="./app/app.routes.js" defer="defer"></script>
+    <script type="text/javascript" src="./app/app.config.js" defer="defer"></script>
+    <script type="text/javascript" src="./app/pages/cards-list/controller.js" defer="defer"></script>
+    <script type="text/javascript" src="./app/pages/cards-list/service.js" defer="defer"></script>
+    <script type="text/javascript" src="./app/pages/card/component.js" defer="defer"></script>
+    <script type="text/javascript" src="./app/pages/profile/controller.js" defer="defer"></script>
+    <script type="text/javascript" src="./app/shared/card-service.js" defer="defer"></script>
+    <script type="text/javascript" src="./app/shared/user-service.js" defer="defer"></script>
+    <script type="text/javascript" src="./app/shared/favorite/component.js" defer="defer"></script>
+    <script type="text/javascript" src="./app/shared/card-actions/component.js" defer="defer"></script>
+    <script type="text/javascript" src="./app/shared/banner/component.js" defer="defer"></script>
+  </head>
+  <body>
+    <svg class="svg-sprite" width="0" height="0"><symbol viewBox="0 0 43.244 43.244" id="star-empty"><path d="M22.69 1.785l4.555 14.143 14.872-.016c.619 0 1.127.492 1.127 1.111 0 .365-.19.698-.46.905l-12.047 8.714 4.619 14.142a1.104 1.104 0 0 1-.714 1.397 1.139 1.139 0 0 1-1.079-.206L21.626 33.26 9.611 42.022c-.508.365-1.206.254-1.555-.238a1.093 1.093 0 0 1-.159-1h-.016l4.635-14.142L.469 17.927a1.105 1.105 0 0 1-.254-1.556c.238-.333.603-.492.984-.46l14.793.016 4.571-14.143c.19-.587.809-.905 1.397-.73.365.128.618.397.73.731zm2.682 15.602L21.626 5.753l-3.762 11.635a1.11 1.11 0 0 1-1.063.778l-12.222-.017 9.904 7.159c.381.286.556.778.397 1.254l-3.793 11.619 9.857-7.19a1.142 1.142 0 0 1 1.333-.016l9.872 7.206-3.778-11.571c-.175-.46-.032-1 .381-1.302l9.92-7.159-12.19.016a1.104 1.104 0 0 1-1.11-.778z"/></symbol><symbol viewBox="0 0 306 306" id="star-full"><path d="M153 230.775l94.35 68.85-35.7-112.2 94.35-66.3H191.25L153 6.375l-38.25 114.75H0l94.35 66.3-35.7 112.2z"/></symbol></svg>
+
+    <div class="page-wrapper">
+      <main class="page-content" ng-view></main>
+
+      <aside class="page-sidebar">
+        <div class="page-box">
+          <banner class="banner"></banner>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>

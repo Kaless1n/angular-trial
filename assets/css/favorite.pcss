@@ -1,0 +1,32 @@
+@import 'mixins.pcss';
+
+.favorite {
+  background: none;
+  border: 0;
+  color: $color-link;
+  cursor: pointer;
+  float: right;
+  outline: none;
+  padding: 0;
+}
+
+.favorite-status-yes {
+  display: none;
+}
+
+.favorite-active {
+  .favorite-status-no {
+    display: none;
+  }
+
+  .favorite-status-yes {
+    display: block;
+  }
+}
+
+.favorite-icon {
+  display: inline-block;
+  fill: $color-link;
+  margin-right: 8px;
+  vertical-align: top;
+}

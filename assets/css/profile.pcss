@@ -1,0 +1,129 @@
+@import 'mixins.pcss';
+
+.profile {
+  font-size: 1.5rem;
+}
+
+.profile-summary {
+  @mixin clearfix;
+}
+
+.profile-summary-header {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.profile-summary-content {
+  float: left;
+  width: 370px;
+}
+
+.profile-summary-inbox {
+  color: $color-gray;
+  margin-left: 12px;
+}
+
+.profile-name,
+.profile-contacts,
+.profile-email {
+  font-size: 1.8rem;
+}
+
+.profile-name {
+  margin-bottom: 9px;
+}
+
+.profile-title {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1em;
+  margin-bottom: 12px;
+}
+
+.profile-terms {
+  line-height: 1.2em;
+}
+
+.profile-contacts {
+  line-height: 1.223em;
+  margin-top: 24px;
+}
+
+.profile-contacts-avail {
+  margin-left: 14px;
+}
+
+.profile-contacts-email {
+  margin-top: 1px;
+  text-decoration: none;
+}
+
+.profile-img {
+  float: right;
+  margin-top: 4px;
+}
+
+.profile-exp-header {
+  font-size: 1.8rem;
+  margin: 21px 0 9px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.profile-exp {
+  line-height: 1.2em;
+  margin-bottom: 12px;
+
+  @mixin clearfix;
+}
+
+.prpfile-exp-position {
+  float: left;
+  width: 155px;
+}
+
+.profile-exp-position-title,
+.profile-exp-details-company {
+  font-weight: bold;
+}
+
+.profile-exp-position-date {
+  text-transform: lowercase;
+}
+
+.profile-exp-details {
+  float: right;
+  width: 428px;
+}
+
+.profile-exp-details-item {
+  &:before {
+    content: '— ';
+  }
+}
+
+/* unpurchased state */
+.profile-summary-inbox,
+.profile-name,
+.profile-contacts {
+  display: none;
+}
+
+/* purchased state */
+.profile-purchased {
+  .card-button-buy {
+    display: none;
+  }
+
+  .profile-summary-inbox {
+    display: inline-block;
+  }
+
+  .profile-name,
+  .profile-contacts,
+  .card-actions {
+    display: block;
+  }
+}
